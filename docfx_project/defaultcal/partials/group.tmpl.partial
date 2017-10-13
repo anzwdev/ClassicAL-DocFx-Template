@@ -1,0 +1,28 @@
+{{>partials/group.header}}
+
+{{#items.0}}
+
+<table class="table table-bordered table-striped table-condensed">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+{{/items.0}}
+
+{{#items}}
+    <tr>
+      <td>{{{objectid}}}</td>
+      <td><xref href="{{uid}}" altProperty="name" displayProperty="name"/></td>
+      <td>{{{summary}}}</td>
+    </tr>
+{{/items}}
+
+{{#items.0}}
+    </tbody>
+</table>
+{{/items.0}}
+

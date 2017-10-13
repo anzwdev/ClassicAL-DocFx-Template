@@ -1,0 +1,89 @@
+{{!Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.}}
+
+{{>partials/object.header}}
+
+{{#sourcetablename}}
+  <h3 id="Fields">Source Table</h3>
+  
+  {{#sourcetableuid}}
+    <div class="markdown level1 summary">
+      <xref href="{{sourcetableuid}}" altProperty="sourcetablename" displayProperty="sourcetablename"/>
+    </div>
+  {{/sourcetableuid}}
+
+  {{^sourcetableuid}}
+  <div class="markdown level1 summary">{{{sourcetablename}}}</div>
+  {{/sourcetableuid}}
+{{/sourcetablename}}
+
+{{#isTableObject}}
+<h3 id="Fields">Fields</h3>
+<div class="markdown level1 summary">List of table fields</div>
+
+<table class="table table-bordered table-striped table-condensed">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+{{#fields}}
+    <tr>
+      <td>{{{fieldid}}}</td>
+      <td><span class="parametername">{{{name}}}</span></td>
+      <td>{{{datatype}}}</td>
+      <td>{{{description}}}</td>
+    </tr>
+{{/fields}}
+  </tbody>
+</table>
+{{/isTableObject}}
+
+{{#isPageObject}}
+
+<h3 id="Fields">Fields</h3>
+<div class="markdown level1 summary">List of available fields</div>
+
+<table class="table table-bordered table-striped table-condensed">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+{{#fields}}
+    <tr>
+      <td><span class="parametername">{{{name}}}</span></td>
+      <td>{{{description}}}</td>
+    </tr>
+{{/fields}}
+  </tbody>
+</table>
+{{/isPageObject}}
+
+{{#procedures.0}}
+<h3 id="procedures">Procedures</h3>
+{{/procedures.0}}
+{{#procedures}}
+{{>partials/procedure}}
+{{/procedures}}
+
+{{#eventpublishers.0}}
+<h3 id="eventpublishers">Event Publishers</h3>
+{{/eventpublishers.0}}
+{{#eventpublishers}}
+{{>partials/procedure}}
+{{/eventpublishers}}
+
+{{#eventsubscribers.0}}
+<h3 id="eventsubscribers">Event Subscribers</h3>
+{{/eventsubscribers.0}}
+{{#eventsubscribers}}
+{{>partials/procedure}}
+{{/eventsubscribers}}
+
+{{>partials/seealso}}
