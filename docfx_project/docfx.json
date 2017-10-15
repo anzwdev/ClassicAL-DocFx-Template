@@ -69,7 +69,7 @@
     },
     "template": [
       "default",
-      "C:/Projects/Public Projects/NavDocumentation/DocFxTemplateProject/docfx_project/defaultcal"
+      "defaultcal"
     ],
     "postProcessors": [],
     "noLangKeyword": false
